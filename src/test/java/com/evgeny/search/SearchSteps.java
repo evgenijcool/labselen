@@ -17,7 +17,7 @@ public class SearchSteps {
 
     @When("^Click search button$")
     public void clickSearchButton() throws Throwable {
-        WebElement search = driver.findElement(By.id("searchButton"));
+        WebElement search = driver.findElement(By.name("btnG"));
         search.click();
         delay();
     }
@@ -37,7 +37,7 @@ public class SearchSteps {
 
     @And("^Input (.+) into search$")
     public void inputQueryIntoSearch(String input) throws Throwable {
-        WebElement searchInput = driver.findElement(By.id("searchInput"));
+        WebElement searchInput = driver.findElement(By.id("lst-ib"));
         searchInput.sendKeys(input);
         delay();
     }

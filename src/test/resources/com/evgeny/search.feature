@@ -1,10 +1,10 @@
 Feature: Search
 
-  Scenario: Empty search
-    Given I open main page
-    When Click search button
-    Then I see text Служебная страница
-    Then I see text Поиск
+#  Scenario: Empty search
+#    Given I open main page
+#    When Click search button
+#    Then I see text Служебная страница
+#    Then I see text Поиск
 
   Scenario Outline: Real search
     Given I open main page
@@ -15,4 +15,4 @@ Feature: Search
     | query   | found  |
     | Сергей Лукьяненко | Лукьяненко, Сергей Васильевич |
     | Жаба | Жабы |
-    | ыпрфдпдфрпдлпрдпдывпрывдпрвдыжывждджып | Соответствий запросу не найдено |
+    | ыпрфдпдфрпдлпрдпдывпрывдпрвдыжывждджып | ничего не найдено. |

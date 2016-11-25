@@ -1,5 +1,6 @@
 package com.evgeny.authorization;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -81,10 +82,22 @@ public class AuthSteps {
     @Given("^Input correct login$")
     public void inputCorrectLogin() throws Throwable {
         inputLogin(LOGIN);
+        WebElement nextButton = driver.findElement(By.id("next"));
+        nextButton.click();
+        delay();
     }
 
     @Given("^Input incorrect pass$")
     public void inputIncorrectPass() throws Throwable {
+        inputPass(PASSWORD + "wrong");
+    }
+
+    @Given("^Input correct login and incorrect pass$")
+    public void inputCorrectLoginAndIncorrectPass() throws Throwable {
+        inputLogin(LOGIN);
+        WebElement nextButton = driver.findElement(By.id("next"));
+        nextButton.click();
+        delay();
         inputPass(PASSWORD + "wrong");
     }
 }
